@@ -22,7 +22,6 @@ function TextForm(props) {
             </div>
             <button onClick={()=>UpperCase()} className="btn btn-primary">Convert to Uppercase</button>
             <button onClick={()=>LowerCase()} className="btn btn-primary mx-3">Convert to Lowercase</button>
-            <button onClick={()=>LowerCase()} className="btn btn-primary">Jaden Text </button>
         </div>
     )
 }
