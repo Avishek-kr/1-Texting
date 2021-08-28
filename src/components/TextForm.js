@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 function TextForm(props) {
-    const [text, setText] = useState("Enter the text")
+    const [text, setText] = useState("")
 
     const UpperCase=()=>{
         let newText= text.toUpperCase()
@@ -27,7 +27,8 @@ function TextForm(props) {
         <div className="container my-3">
         <h1>Your text summary</h1>
         <p>{text.split(" ").length} words and {text.length} characters</p>
-
+        <p>{0.008* text.split(" ").length} Minutes read</p>
+        <h3>Preview</h3>
         </div>
         </>
     )
