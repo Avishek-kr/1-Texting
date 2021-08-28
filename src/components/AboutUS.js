@@ -1,29 +1,6 @@
-import React, {useState} from 'react'
-
-function AboutUS() {
-  const [myStyle, setmyStyle] = useState({
-    color: '#000000',
-    backgroundColor: "#ffffff"
-  })
-  const [btnText, setbtnText] = useState("Enable Dark Mode")
-
-  const darkMode=()=>{
-    if(myStyle.color === "#000000"){
-      setmyStyle({
-        color: '#ffffff',
-        backgroundColor: "#000000"
-      })
-        setbtnText("Enable Light Mode")
-    }else{
-      setmyStyle({
-        color: '#000000',
-        backgroundColor: "#ffffff"
-      })
-      setbtnText("Enable Dark Mode")
-    }
-  }
+function AboutUS(props) {
   return (
-    <div className="container pt-5 pb-5 rounded-3" style={myStyle}>
+    <div className="container pt-5 pb-5 rounded-3" style={{backgroundColor: props.mode==="dark"? "#111212": "#ffffff", color: props.mode==="dark"? "#ffffff": "#000000" }}>
       <h1 className="my-3">About Us</h1> 
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
@@ -33,7 +10,7 @@ function AboutUS() {
             </button>
           </h2>
           <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div className="accordion-body" style={myStyle} >
+            <div className="accordion-body" style={{backgroundColor: props.mode==="dark"? "#111212": "#ffffff", color: props.mode==="dark"? "#ffffff": "#000000" }} >
               <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
@@ -45,7 +22,7 @@ function AboutUS() {
             </button>
           </h2>
           <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div className="accordion-body" style={myStyle}>
+            <div className="accordion-body" style={{backgroundColor: props.mode==="dark"? "#111212": "#ffffff", color: props.mode==="dark"? "#ffffff": "#000000" }}>
               <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
@@ -57,14 +34,11 @@ function AboutUS() {
             </button>
           </h2>
           <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div className="accordion-body" style={myStyle}>
+            <div className="accordion-body" style={{backgroundColor: props.mode==="dark"? "#111212": "#ffffff", color: props.mode==="dark"? "#ffffff": "#000000" }}>
               <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
           </div>
         </div>
-      </div>
-      <div className="container my-3">
-        <button onClick={()=>darkMode()} className="btn btn-primary">{btnText}</button>
       </div>
     </div>
   )

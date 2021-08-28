@@ -22,7 +22,7 @@ function TextForm(props) {
         <div className="container">
             <h1>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" onChange={handleOnChange} value={text} id="myBox" rows="8"></textarea>
+                <textarea className="form-control" onChange={handleOnChange} value={text} style={{backgroundColor: props.mode==="dark"? "#111212": "#ffffff", color: props.mode==="dark"? "#ffffff": "#000000" }} id="myBox" rows="8"></textarea>
             </div>
             <button onClick={()=>UpperCase()} className="btn btn-primary">Convert to Uppercase</button>
             <button onClick={()=>LowerCase()} className="btn btn-primary mx-3">Convert to Lowercase</button>
