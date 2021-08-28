@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
+import 
+{BrowserRouter as Router, 
+   Route, 
+   Switch 
+} from 'react-router-dom';
 import './App.css';
 import AboutUS from './components/AboutUS';
 import Alert from './components/Alert';
+import Myself from './components/Myself';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import ThemeColor from './components/ThemeColor';
+
 
 
 
@@ -48,15 +55,26 @@ function App() {
   }
   return (
     <>
-      <Navbar title="Textutils" mode={mode} toggleMode={toggleMode} />
+    <Router>
+      <Navbar title="Home" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container mt-3">
           <ThemeColor yellow={yellow} blue={blue} red={red}/>
       </div>
         <div className="container my-3">
-      <TextForm showAlert={showAlert} heading="Enter the text to analyse" mode={mode} />
-      <AboutUS mode={mode} />
+          <Switch>
+          <Route exact path='/'>
+          <Myself />
+          </Route>
+            <Route exact path='/textutils'>
+          <TextForm showAlert={showAlert} heading="Enter the text to analyse" mode={mode} />
+          </Route>
+          <Route path="/about">
+            <AboutUS mode={mode} />
+            </Route>
+          </Switch>
         </div>
+        </Router>
     </>
   );
 }
