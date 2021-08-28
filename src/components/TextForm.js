@@ -11,6 +11,9 @@ function TextForm(props) {
         let newText= text.toLowerCase()
         setText(newText)
     }
+    const clearAll=()=>{
+        setText(" ")
+    }
     const handleOnChange=(e)=>{
         setText(e.target.value)
     }
@@ -23,12 +26,14 @@ function TextForm(props) {
             </div>
             <button onClick={()=>UpperCase()} className="btn btn-primary">Convert to Uppercase</button>
             <button onClick={()=>LowerCase()} className="btn btn-primary mx-3">Convert to Lowercase</button>
+            <button onClick={()=>clearAll()} className="btn btn-primary">Clear All</button>
         </div>
         <div className="container my-3">
-        <h1>Your text summary</h1>
+        <h2>Your text summary</h2>
         <p>{text.split(" ").length} words and {text.length} characters</p>
-        <p>{0.008* text.split(" ").length} Minutes read</p>
-        <h3>Preview</h3>
+        <p>{0.192* text.split(" ").length/60} Minutes to read</p>
+        <h2>Preview</h2>
+        <p>{text}</p>
         </div>
         </>
     )
