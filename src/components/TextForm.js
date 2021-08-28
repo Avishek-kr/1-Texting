@@ -6,13 +6,16 @@ function TextForm(props) {
     const UpperCase=()=>{
         let newText= text.toUpperCase()
         setText(newText)
+        props.showAlert("Changed to Upper Case 👍", "success")
     }
     const LowerCase=()=>{
         let newText= text.toLowerCase()
         setText(newText)
+        props.showAlert("Changed to Lower Case 👎", "success")
     }
     const clearAll=()=>{
         setText(" ")
+        props.showAlert("All text is Cleared ❌", "success")
     }
     const handleOnChange=(e)=>{
         setText(e.target.value)
