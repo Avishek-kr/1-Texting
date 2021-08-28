@@ -8,7 +8,7 @@ function Myself() {
                 <img src={mine} alt="mine" />
                 <p className="m-3">Hello Friends,</p>
 
-I am Avishek the founder of    <a href="https://www.latestkhaabri.com">LatestKhabari</a> .
+I am Avishek the founder of    <a href="https://www.latestkhabari.com">LatestKhabari</a> .
 I am an Software Engineer by profession.
 I have been doing coding and UI/UX design since 2019.
 I am passionate about sharing my all learnings and experiences of Coding, designing and Latest tech news.
